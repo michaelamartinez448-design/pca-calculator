@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PCA Calculator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>PCA Calculator</h1>
+    <p class="subtitle">Calculate PCA demand delivery and basal/bolus dose distribution.</p>
+
+    <section class="card">
+      <h2>Demand Delivery</h2>
+
+      <div class="input-group">
+        <label for="demands">Total demands</label>
+        <input id="demands" type="text" inputmode="decimal" placeholder="e.g. 7+7+4">
+        <div class="calculated" id="demandsResult"></div>
+      </div>
+
+      <div class="input-group">
+        <label for="delivered">Total doses delivered</label>
+        <input id="delivered" type="text" inputmode="decimal" placeholder="e.g. 5+6+3">
+        <div class="calculated" id="deliveredResult"></div>
+      </div>
+
+      <div class="result">
+        <span>Doses delivered / demands</span>
+        <strong id="deliveryFraction">—</strong>
+        <small id="deliveryPercent"></small>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Basal Dose</h2>
+
+      <div id="basalSegments">
+        <div class="basal-segment">
+          <div class="segment-header">
+            <strong>Basal segment 1</strong>
+          </div>
+
+          <div class="input-row">
+            <div class="input-group">
+              <label>Basal rate</label>
+              <div class="unit-input">
+                <input class="basal-rate" type="text" inputmode="decimal" placeholder="e.g. 0.5">
+                <span>mg/hr</span>
+              </div>
+              <div class="calculated basal-rate-result"></div>
+            </div>
+
+            <div class="input-group">
+              <label>Duration</label>
+              <div class="unit-input">
+                <input class="basal-hours" type="text" inputmode="decimal" placeholder="e.g. 6">
+                <span>hr</span>
+              </div>
+              <div class="calculated basal-hours-result"></div>
+            </div>
+          </div>
+
+          <div class="segment-dose">
+            <span>Segment dose</span>
+            <strong class="basal-segment-dose">—</strong>
+            <small>mg</small>
+          </div>
+        </div>
+      </div>
+
+      <button id="addBasalButton" type="button" class="secondary-button">
+        + Add basal segment
+      </button>
+
+      <div class="result">
+        <span>Total basal dose</span>
+        <strong id="basalDose">—</strong>
+        <small>mg</small>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Dose Distribution</h2>
+
+      <div class="input-group">
+        <label for="totalDose">Total dose received</label>
+        <div class="unit-input">
+          <input id="totalDose" type="text" inputmode="decimal" placeholder="e.g. 1+2+2">
+          <span>mg</span>
+        </div>
+        <div class="calculated" id="totalDoseResult"></div>
+      </div>
+
+      <div class="results-grid">
+        <div class="result">
+          <span>Total bolus dose</span>
+          <strong id="bolusDose">—</strong>
+          <small>mg</small>
+        </div>
+
+        <div class="result">
+          <span>Basal received</span>
+          <strong id="basalPercent">—</strong>
+        </div>
+
+        <div class="result">
+          <span>Bolus received</span>
+          <strong id="bolusPercent">—</strong>
+        </div>
+      </div>
+    </section>
+
+    <div class="button-row"><button id="copyButton" type="button">Copy Results</button><button id="clearButton" type="button">Clear</button></div>
+
+    <p class="disclaimer">
+      For calculation assistance only. Verify all doses and settings independently.
+    </p>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
