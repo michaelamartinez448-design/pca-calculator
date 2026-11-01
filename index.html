@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PCA Calculator Prototype</title>
+  <title>PCA Calculator</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -51,23 +51,6 @@
       </button>
     </section>
 
-    <section class="card demand-card">
-      <h2>Demand Delivery</h2>
-      <div class="result">
-        <span>Total demands</span>
-        <strong id="totalDemands">—</strong>
-      </div>
-      <div class="result">
-        <span>Total doses delivered</span>
-        <strong id="totalDelivered">—</strong>
-      </div>
-      <div class="result">
-        <span>Doses delivered / demands</span>
-        <strong id="deliveryFraction">—</strong>
-        <small id="deliveryPercent"></small>
-      </div>
-    </section>
-
     <section class="card basal-card">
       <h2>Basal Dose</h2>
 
@@ -113,27 +96,48 @@
       </div>
     </section>
 
-    <section class="card distribution-card">
-      <h2>Dose Distribution</h2>
-      <div class="result">
-        <span>Total dose received</span>
-        <strong id="totalDose">—</strong>
-        <small>mg</small>
+    <section class="card summary-card">
+      <h2>Dose Summary</h2>
+
+      <div class="summary-group">
+        <h3>Demand Delivery</h3>
+        <div class="result">
+          <span>Total demands</span>
+          <strong id="totalDemands">—</strong>
+        </div>
+        <div class="result">
+          <span>Total doses delivered</span>
+          <strong id="totalDelivered">—</strong>
+        </div>
+        <div class="result">
+          <span>Doses delivered / demands</span>
+          <strong id="deliveryFraction">—</strong>
+          <small id="deliveryPercent"></small>
+        </div>
       </div>
 
-      <div class="results-grid">
+      <div class="summary-group">
+        <h3>Dose Distribution</h3>
         <div class="result">
-          <span>Total bolus dose</span>
-          <strong id="bolusDose">—</strong>
+          <span>Total dose received</span>
+          <strong id="totalDose">—</strong>
           <small>mg</small>
         </div>
-        <div class="result">
-          <span>Basal received</span>
-          <strong id="basalPercent">—</strong>
-        </div>
-        <div class="result">
-          <span>Bolus received</span>
-          <strong id="bolusPercent">—</strong>
+
+        <div class="results-grid">
+          <div class="result">
+            <span>Total bolus dose</span>
+            <strong id="bolusDose">—</strong>
+            <small>mg</small>
+          </div>
+          <div class="result">
+            <span>Basal received</span>
+            <strong id="basalPercent">—</strong>
+          </div>
+          <div class="result">
+            <span>Bolus received</span>
+            <strong id="bolusPercent">—</strong>
+          </div>
         </div>
       </div>
     </section>

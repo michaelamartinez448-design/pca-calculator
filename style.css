@@ -467,3 +467,38 @@ input:focus {
   border-color: #cbd2da !important;
   background: white !important;
 }
+
+/* Consolidated dose summary */
+.summary-card {
+  background: #f1faf5;
+  border-color: #c8e6d3;
+}
+
+.summary-card .result {
+  background: #e3f5e9;
+}
+
+.summary-group h3 {
+  margin: 18px 0 10px;
+  color: #344054;
+  font-size: 15px;
+}
+
+.summary-group:first-of-type h3 {
+  margin-top: 0;
+}
+
+.summary-group + .summary-group {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #c8e6d3;
+}
+
+/* Typography refinements */
+h2 {
+  font-size: 20px;
+}
+
+.summary-group h3 {
+  font-size: 16px;
+}
