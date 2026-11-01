@@ -320,3 +320,150 @@ input:focus {
 .secondary-button:hover {
   background: rgba(255, 255, 255, 0.6);
 }
+
+/* Pump interval table */
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.section-description {
+  margin: -10px 0 18px;
+  color: #667085;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.table-scroll {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 14px;
+  border: 1px solid #c7ddf5;
+  border-radius: 9px;
+  background: rgba(255, 255, 255, 0.7);
+}
+
+#intervalTable {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+#intervalTable th,
+#intervalTable td {
+  padding: 10px;
+  border-bottom: 1px solid #dce8f5;
+  border-right: 1px solid #dce8f5;
+  text-align: left;
+  vertical-align: middle;
+}
+
+#intervalTable tr:last-child th,
+#intervalTable tr:last-child td {
+  border-bottom: 0;
+}
+
+#intervalTable th.row-label {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  width: 190px;
+  min-width: 190px;
+  background: #e3f0ff;
+  color: #344054;
+  font-weight: 600;
+}
+
+#intervalTable thead th {
+  background: #e3f0ff;
+  color: #344054;
+}
+
+#intervalTable td {
+  min-width: 165px;
+}
+
+#intervalTable input {
+  min-height: 40px;
+  padding: 8px;
+  font-size: 14px;
+}
+
+.interval-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+
+.remove-interval {
+  border: 0;
+  background: transparent;
+  color: #b42318;
+  font-size: 20px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 2px 5px;
+}
+
+.interval-card .result {
+  background: #e3f0ff;
+}
+
+.demand-card .result {
+  background: #e3f0ff;
+}
+
+.basal-card .result {
+  background: #eee7ff;
+}
+
+.distribution-card .result {
+  background: #e3f5e9;
+}
+
+#intervalTable input[type="date"],
+#intervalTable input[data-field="time"] {
+  color: #667085;
+}
+
+#intervalTable input {
+  color: #17202a;
+}
+
+#intervalTable input,
+#intervalTable input[type="date"],
+#intervalTable input::-webkit-datetime-edit,
+#intervalTable input::-webkit-datetime-edit-fields-wrapper,
+#intervalTable input::-webkit-datetime-edit-text,
+#intervalTable input::-webkit-datetime-edit-month-field,
+#intervalTable input::-webkit-datetime-edit-day-field,
+#intervalTable input::-webkit-datetime-edit-year-field {
+  color: #000000 !important;
+  -webkit-text-fill-color: #000000 !important;
+  opacity: 1 !important;
+}
+
+/* Restore standard input and placeholder colors */
+#intervalTable input {
+  color: #17202a !important;
+  -webkit-text-fill-color: #17202a !important;
+}
+
+#intervalTable input::placeholder {
+  color: #98a2b3 !important;
+  -webkit-text-fill-color: #98a2b3 !important;
+  opacity: 1;
+}
+
+#intervalTable input.invalid-time {
+  border-color: #dc2626;
+  background: #fef2f2;
+}
+
+#intervalTable input.invalid-time {
+  border-color: #cbd2da !important;
+  background: white !important;
+}

@@ -3,30 +3,64 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>PCA Calculator</title>
+  <title>PCA Calculator Prototype</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div class="container">
     <h1>PCA Calculator</h1>
-    <p class="subtitle">Calculate PCA demand delivery and basal/bolus dose distribution.</p>
+    <p class="subtitle">Track pump intervals and calculate PCA demand delivery and basal/bolus dose distribution.</p>
 
-    <section class="card">
+    <section class="card interval-card">
+      <div class="section-heading">
+        <div>
+          <h2>Pump Intervals</h2>
+          <p class="section-description">Enter the values for each interval between pump clears.</p>
+        </div>
+      </div>
+
+      <div class="table-scroll">
+        <table id="intervalTable">
+          <thead>
+            <tr id="intervalHeaders">
+              <th class="row-label"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-field="drug">
+              <th class="row-label">Total drug since last clear (mg)</th>
+            </tr>
+            <tr data-field="demands">
+              <th class="row-label">Total demands</th>
+            </tr>
+            <tr data-field="delivered">
+              <th class="row-label">Doses delivered</th>
+            </tr>
+            <tr data-field="date">
+              <th class="row-label">Date pump last cleared</th>
+            </tr>
+            <tr data-field="time">
+              <th class="row-label">Time pump last cleared</th>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button id="addIntervalButton" type="button" class="secondary-button">
+        + Add interval
+      </button>
+    </section>
+
+    <section class="card demand-card">
       <h2>Demand Delivery</h2>
-
-      <div class="input-group">
-        <label for="demands">Total demands</label>
-        <input id="demands" type="text" inputmode="decimal" placeholder="e.g. 7+7+4">
-        <div class="calculated" id="demandsResult"></div>
+      <div class="result">
+        <span>Total demands</span>
+        <strong id="totalDemands">—</strong>
       </div>
-
-      <div class="input-group">
-        <label for="delivered">Total doses delivered</label>
-        <input id="delivered" type="text" inputmode="decimal" placeholder="e.g. 5+6+3">
-        <div class="calculated" id="deliveredResult"></div>
+      <div class="result">
+        <span>Total doses delivered</span>
+        <strong id="totalDelivered">—</strong>
       </div>
-
       <div class="result">
         <span>Doses delivered / demands</span>
         <strong id="deliveryFraction">—</strong>
@@ -34,7 +68,7 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card basal-card">
       <h2>Basal Dose</h2>
 
       <div id="basalSegments">
@@ -42,7 +76,6 @@
           <div class="segment-header">
             <strong>Basal segment 1</strong>
           </div>
-
           <div class="input-row">
             <div class="input-group">
               <label>Basal rate</label>
@@ -52,7 +85,6 @@
               </div>
               <div class="calculated basal-rate-result"></div>
             </div>
-
             <div class="input-group">
               <label>Duration</label>
               <div class="unit-input">
@@ -62,7 +94,6 @@
               <div class="calculated basal-hours-result"></div>
             </div>
           </div>
-
           <div class="segment-dose">
             <span>Segment dose</span>
             <strong class="basal-segment-dose">—</strong>
@@ -82,16 +113,12 @@
       </div>
     </section>
 
-    <section class="card">
+    <section class="card distribution-card">
       <h2>Dose Distribution</h2>
-
-      <div class="input-group">
-        <label for="totalDose">Total dose received</label>
-        <div class="unit-input">
-          <input id="totalDose" type="text" inputmode="decimal" placeholder="e.g. 1+2+2">
-          <span>mg</span>
-        </div>
-        <div class="calculated" id="totalDoseResult"></div>
+      <div class="result">
+        <span>Total dose received</span>
+        <strong id="totalDose">—</strong>
+        <small>mg</small>
       </div>
 
       <div class="results-grid">
@@ -100,12 +127,10 @@
           <strong id="bolusDose">—</strong>
           <small>mg</small>
         </div>
-
         <div class="result">
           <span>Basal received</span>
           <strong id="basalPercent">—</strong>
         </div>
-
         <div class="result">
           <span>Bolus received</span>
           <strong id="bolusPercent">—</strong>
@@ -113,7 +138,10 @@
       </div>
     </section>
 
-    <div class="button-row"><button id="copyButton" type="button">Copy Results</button><button id="clearButton" type="button">Clear</button></div>
+    <div class="button-row">
+      <button id="copyButton" type="button">Copy Results</button>
+      <button id="clearButton" type="button">Clear</button>
+    </div>
 
     <p class="disclaimer">
       For calculation assistance only. Verify all doses and settings independently.
