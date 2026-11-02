@@ -7,19 +7,31 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+
   <div class="container">
     <h1>PCA Calculator</h1>
     <p class="subtitle">Track PCA pump intervals and basal segments, and calculate demand delivery and basal/bolus dose distribution.</p>
 
     
     <div class="ketamine-link-container">
+      <button id="themeToggle" type="button" aria-label="Toggle dark mode">
+  🌙 Dark Mode
+</button>
       <a class="ketamine-link-button"
          href="https://ketamine-infusion-calculator.netlify.app"
          target="_blank"
          rel="noopener noreferrer">
         Ketamine Infusion Calculator ↗
       </a>
-    </div>
+    
+      <a class="paging-link-button"
+         href="https://chpage.tch.harvard.edu/webxchange/"
+         target="_blank"
+         rel="noopener noreferrer">
+        BCH Paging System ↗
+      </a>
+</div>
 
     <section class="card interval-card">
       <div class="section-heading">
@@ -98,7 +110,7 @@
     </section>
 
     <section class="card summary-card">
-      <h2>Result</h2>
+      <h2>Results</h2>
 
       <div class="summary-group">
         <h3>Demand Delivery</h3>
@@ -165,6 +177,25 @@
       <p>Boston Combined Residency Program (BCRP)</p>
       <p>Quality Improvement Project · 2026</p>
     </footer>
+
+
+<script>
+(function () {
+  const button = document.getElementById("themeToggle");
+
+  function setTheme(dark) {
+    document.body.classList.toggle("dark-mode", dark);
+    button.textContent = dark ? "☀️ Light Mode" : "🌙 Dark Mode";
+    localStorage.setItem("pca-theme", dark ? "dark" : "light");
+  }
+
+  setTheme(localStorage.getItem("pca-theme") === "dark");
+
+  button.addEventListener("click", function () {
+    setTheme(!document.body.classList.contains("dark-mode"));
+  });
+})();
+</script>
 
 </body>
 </html>

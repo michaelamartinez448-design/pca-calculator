@@ -400,5 +400,7 @@ document.getElementById("copyButton").addEventListener("click", async () => {
   }
 });
 
-addInterval();
+for (let i = 0; i < 3; i++) {
+  addInterval();
+}
 updateCalculator();
