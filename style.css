@@ -894,3 +894,70 @@ body.dark-mode .ketamine-link-container .ketamine-link-button:hover {
   min-height: 110px;
   box-sizing: border-box;
 }
+
+/* Align Total Basal and Total Bolus Dose boxes */
+.summary-card .summary-group:last-child > .result:nth-of-type(2),
+.summary-card .summary-group:last-child > .results-grid > .result:first-child {
+  margin-top: 18px;
+  align-self: stretch;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+  .summary-card .summary-group:last-child > .result:nth-of-type(2),
+  .summary-card .summary-group:last-child > .results-grid > .result:first-child {
+    margin-top: 12px;
+  }
+}
+
+/* Compact, equal-sized Dose Distribution boxes */
+.summary-card .summary-group:last-child {
+  display: block;
+}
+
+.summary-card .summary-group:last-child > .result:first-of-type {
+  width: 100%;
+}
+
+.summary-card .summary-group:last-child > .results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.summary-card .summary-group:last-child > .results-grid > .result {
+  width: 100%;
+  min-width: 0;
+  min-height: 110px;
+  height: 110px;
+  margin-top: 12px;
+  box-sizing: border-box;
+}
+
+/* Final Dose Distribution layout: four equal compact boxes */
+.summary-card .summary-group:last-child > .results-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+
+.summary-card .summary-group:last-child > .results-grid > .result {
+  width: 100% !important;
+  height: 100px !important;
+  min-height: 100px !important;
+  margin: 0 !important;
+  padding: 12px !important;
+  box-sizing: border-box !important;
+  align-content: center;
+}
+
+@media (max-width: 600px) {
+  .summary-card .summary-group:last-child > .results-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+.summary-card .summary-group:last-child > .results-grid {
+  margin-top: 12px !important;
+}
