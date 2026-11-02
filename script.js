@@ -97,9 +97,6 @@ function updateCalculator() {
     segment.querySelector(".basal-hours-result").textContent =
       data.hours === null ? "" : `= ${formatNumber(data.hours)}`;
 
-    segment.querySelector(".basal-segment-dose").textContent =
-      data.dose === null ? "—" : formatNumber(data.dose);
-
     if (data.dose !== null) {
       totalBasal += data.dose;
       hasBasal = true;
@@ -160,9 +157,9 @@ function addInterval() {
   document.getElementById("intervalHeaders").appendChild(header);
 
   const fields = [
-    ["drug", "text", "e.g. 1+2+2"],
-    ["demands", "text", "e.g. 7+7+4"],
-    ["delivered", "text", "e.g. 5+6+3"],
+    ["drug", "text", "e.g. 8"],
+    ["demands", "text", "e.g. 6"],
+    ["delivered", "text", "e.g. 4"],
     ["date", "date", ""],
     ["time", "text", "HH:MM"]
   ];
@@ -221,7 +218,7 @@ function addBasalSegment() {
   segment.className = "basal-segment";
   segment.innerHTML = `
     <div class="segment-header">
-      <strong>Basal segment ${number}</strong>
+      <strong>Segment ${number}</strong>
       <button type="button" class="remove-segment">Remove</button>
     </div>
     <div class="input-row">
@@ -242,11 +239,7 @@ function addBasalSegment() {
         <div class="calculated basal-hours-result"></div>
       </div>
     </div>
-    <div class="segment-dose">
-      <span>Segment dose</span>
-      <strong class="basal-segment-dose">—</strong>
-      <small>mg</small>
-    </div>
+    
   `;
 
   container.appendChild(segment);
@@ -266,7 +259,7 @@ function addBasalSegment() {
 function renumberBasalSegments() {
   document.querySelectorAll(".basal-segment").forEach((segment, index) => {
     segment.querySelector(".segment-header strong").textContent =
-      `Basal segment ${index + 1}`;
+      `Segment ${index + 1}`;
   });
 }
 
@@ -308,8 +301,8 @@ function buildCopyText() {
         ? "—"
         : `${formatNumber(delivered)}/${formatNumber(demands)} (${(deliveryFraction * 100).toFixed(1)}%)`
     }`,
-    `Total basal: ${formatNumber(totalBasal)} mg`,
     `Total dose: ${formatNumber(totalDose)} mg`,
+    `Total basal: ${formatNumber(totalBasal)} mg`,
     `Total bolus: ${formatNumber(bolusDose)} mg`,
     `Basal: ${basalPercent === null ? "—" : basalPercent.toFixed(1) + "%"}`,
     `Bolus: ${bolusPercent === null ? "—" : bolusPercent.toFixed(1) + "%"}`
@@ -367,7 +360,7 @@ document.getElementById("clearButton").addEventListener("click", () => {
   basalContainer.innerHTML = `
     <div class="basal-segment">
       <div class="segment-header">
-        <strong>Basal segment 1</strong>
+        <strong>Segment 1</strong>
       </div>
       <div class="input-row">
         <div class="input-group">
@@ -387,11 +380,7 @@ document.getElementById("clearButton").addEventListener("click", () => {
           <div class="calculated basal-hours-result"></div>
         </div>
       </div>
-      <div class="segment-dose">
-        <span>Segment dose</span>
-        <strong class="basal-segment-dose">—</strong>
-        <small>mg</small>
-      </div>
+      
     </div>
   `;
 

@@ -502,3 +502,145 @@ h2 {
 .summary-group h3 {
   font-size: 16px;
 }
+
+
+/* Align basal and bolus dose results side by side */
+.summary-card .summary-group:last-child {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.summary-card .summary-group:last-child h3,
+.summary-card .summary-group:last-child > .result:first-of-type {
+  grid-column: 1 / -1;
+}
+
+.summary-card .summary-group:last-child > .results-grid {
+  display: contents;
+}
+
+/* Cohesive blue palette: PCA Intervals */
+#intervalTable {
+  background: #f1f7ff;
+  border-color: #c6dcf7;
+}
+
+#intervalTable th {
+  background: #dceaff;
+}
+
+#intervalTable td {
+  background: #edf5ff;
+}
+
+#intervalTable th.row-label {
+  background: #e3efff;
+}
+
+#intervalTable input {
+  background: #f8fbff;
+  border-color: #c7d9ef;
+}
+
+#addIntervalButton {
+  background: #e6f1ff;
+  border-color: #b5d0f2;
+  color: #315d91;
+}
+
+/* Cohesive purple palette: Basal Segments */
+#basalSegments > div {
+  background: #f6f0ff;
+  border-color: #d9c8f5;
+}
+
+#basalSegments input {
+  background: #fcfaff;
+  border-color: #d6c9ec;
+}
+
+#addBasalButton {
+  background: #f1e9ff;
+  border-color: #cdb8ed;
+  color: #5b3d91;
+}
+
+
+/* Hide individual basal input calculation previews */
+#basalSegments .expression-preview,
+#basalSegments .calculation-preview,
+#basalSegments .input-preview,
+#basalSegments small {
+  display: none !important;
+}
+
+/* Hide basal rate and duration calculation previews */
+#basalSegments .basal-rate-result,
+#basalSegments .basal-hours-result {
+  display: none !important;
+}
+
+/* Project attribution footer */
+.project-footer {
+  margin: 32px auto 16px;
+  padding: 18px 12px 8px;
+  border-top: 1px solid #e2e8f0;
+  text-align: center;
+  color: #8a94a3;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.project-footer p {
+  margin: 2px 0;
+  color: #8a94a3;
+}
+
+.project-footer p:first-child {
+  color: #596579;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Link to ketamine infusion calculator */
+.ketamine-link-container {
+  margin: 16px 0 22px;
+}
+
+.ketamine-link-button {
+  display: inline-block;
+  padding: 11px 18px;
+  border: 1px solid #b5d0f2;
+  border-radius: 8px;
+  background: #e6f1ff;
+  color: #315d91;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.ketamine-link-button:hover {
+  background: #d7e9ff;
+}
+
+/* Neutral secondary navigation button */
+.ketamine-link-button {
+  background: #f1f3f5;
+  border-color: #d0d5dd;
+  color: #344054;
+}
+
+.ketamine-link-button:hover {
+  background: #e4e7ec;
+}
+
+/* Fourth color: amber navigation button */
+.ketamine-link-button {
+  background: #fff6e5;
+  border-color: #f0d49a;
+  color: #94651b;
+}
+.ketamine-link-button:hover {
+  background: #ffedc7;
+}
