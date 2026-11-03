@@ -664,48 +664,48 @@ h2 {
   cursor: pointer;
 }
 
-body.dark-mode {
+html.dark-mode body {
   background: #111827;
   color: #e5e7eb;
 }
 
-body.dark-mode section,
-body.dark-mode .card {
+html.dark-mode body section,
+html.dark-mode body .card {
   background: #1f2937;
   color: #e5e7eb;
   border-color: #374151;
 }
 
-body.dark-mode input,
-body.dark-mode select,
-body.dark-mode textarea {
+html.dark-mode body input,
+html.dark-mode body select,
+html.dark-mode body textarea {
   background: #111827;
   color: #f9fafb;
   border-color: #64748b;
 }
 
-body.dark-mode #themeToggle {
+html.dark-mode body #themeToggle {
   background: #374151;
   color: #f9fafb;
   border-color: #64748b;
 }
 
-body.dark-mode .project-footer,
-body.dark-mode .project-footer p {
+html.dark-mode body .project-footer,
+html.dark-mode body .project-footer p {
   color: #9ca3af;
 }
 
 /* Dark mode: keep Basal Segments input text black */
-body.dark-mode #basalSegments input,
-body.dark-mode #basalSegments textarea {
+html.dark-mode body #basalSegments input,
+html.dark-mode body #basalSegments textarea {
   color: #000000 !important;
   -webkit-text-fill-color: #000000 !important;
   background: #ffffff;
 }
 
 /* Keep Basal Segments placeholder text gray */
-body.dark-mode #basalSegments input::placeholder,
-body.dark-mode #basalSegments textarea::placeholder {
+html.dark-mode body #basalSegments input::placeholder,
+html.dark-mode body #basalSegments textarea::placeholder {
   color: #9ca3af !important;
   -webkit-text-fill-color: #9ca3af !important;
   opacity: 1;
@@ -713,38 +713,38 @@ body.dark-mode #basalSegments textarea::placeholder {
 
 
 /* Dark mode: improve Basal Segments label contrast */
-body.dark-mode #basalSegments label {
+html.dark-mode body #basalSegments label {
   color: #f3eaff !important;
 }
 
 /* Dark mode: match light-mode label color */
-body.dark-mode #basalSegments label {
+html.dark-mode body #basalSegments label {
   color: #1f2937 !important;
 }
 
 /* Dark mode: preserve light-mode calculated result text colors */
-body.dark-mode #results .result span {
+html.dark-mode body #results .result span {
   color: #475467 !important;
 }
 
-body.dark-mode #results .result strong {
+html.dark-mode body #results .result strong {
   color: #1f2937 !important;
 }
 
-body.dark-mode #results .result small {
+html.dark-mode body #results .result small {
   color: #667085 !important;
 }
 
 /* Dark mode: preserve light-mode calculated text colors in Results */
-body.dark-mode .summary-card .result span {
+html.dark-mode body .summary-card .result span {
   color: #475467 !important;
 }
 
-body.dark-mode .summary-card .result strong {
+html.dark-mode body .summary-card .result strong {
   color: #1f2937 !important;
 }
 
-body.dark-mode .summary-card .result small {
+html.dark-mode body .summary-card .result small {
   color: #667085 !important;
 }
 
@@ -752,7 +752,7 @@ body.dark-mode .summary-card .result small {
 
 
 /* Dark mode: lighten Results subsection headings */
-body.dark-mode .summary-card .summary-group h3 {
+html.dark-mode body .summary-card .summary-group h3 {
   color: #667085 !important;
 }
 
@@ -861,13 +861,13 @@ body.dark-mode .summary-card .summary-group h3 {
   background: #e2e8f0 !important;
 }
 
-body.dark-mode .paging-link-button {
+html.dark-mode body .paging-link-button {
   background: #374151 !important;
   border-color: #64748b !important;
   color: #f9fafb !important;
 }
 
-body.dark-mode .paging-link-button:hover {
+html.dark-mode body .paging-link-button:hover {
   background: #475569 !important;
 }
 
@@ -882,13 +882,13 @@ body.dark-mode .paging-link-button:hover {
   background: #e2e8f0 !important;
 }
 
-body.dark-mode .ketamine-link-container .ketamine-link-button {
+html.dark-mode body .ketamine-link-container .ketamine-link-button {
   background: #374151 !important;
   border-color: #64748b !important;
   color: #f9fafb !important;
 }
 
-body.dark-mode .ketamine-link-container .ketamine-link-button:hover {
+html.dark-mode body .ketamine-link-container .ketamine-link-button:hover {
   background: #475569 !important;
 }
 
@@ -998,8 +998,8 @@ body.dark-mode .ketamine-link-container .ketamine-link-button:hover {
 }
 
 /* Match basal labels to interval labels in both themes */
-body.dark-mode #basalSegments .input-group label,
-body.dark-mode #basalSegments .segment-header strong {
+html.dark-mode body #basalSegments .input-group label,
+html.dark-mode body #basalSegments .segment-header strong {
   color: #344054 !important;
 }
 
