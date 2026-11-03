@@ -151,7 +151,7 @@ function addInterval() {
   header.innerHTML = `
     <div class="interval-heading">
       <strong>Interval ${number}</strong>
-      <button type="button" class="remove-interval" aria-label="Remove interval ${number}">×</button>
+      ${number > 1 ? `<button type="button" class="remove-interval" aria-label="Remove interval ${number}">×</button>` : ""}
     </div>
   `;
   document.getElementById("intervalHeaders").appendChild(header);
@@ -184,7 +184,7 @@ function addInterval() {
     row.appendChild(cell);
   });
 
-  header.querySelector(".remove-interval").addEventListener("click", () => {
+  header.querySelector(".remove-interval")?.addEventListener("click", () => {
     header.remove();
 
     document.querySelectorAll(`#intervalTable tbody tr`).forEach((row) => {
@@ -203,7 +203,7 @@ function renumberIntervals() {
   document.querySelectorAll("#intervalHeaders th.interval-header").forEach((header, index) => {
     const number = index + 1;
     header.querySelector("strong").textContent = `Interval ${number}`;
-    header.querySelector(".remove-interval").setAttribute(
+    header.querySelector(".remove-interval")?.setAttribute(
       "aria-label",
       `Remove interval ${number}`
     );
@@ -219,7 +219,7 @@ function addBasalSegment() {
   segment.innerHTML = `
     <div class="segment-header">
       <strong>Segment ${number}</strong>
-      <button type="button" class="remove-segment">Remove</button>
+      <button type="button" class="remove-interval remove-segment" aria-label="Remove segment ${number}">×</button>
     </div>
     <div class="input-row">
       <div class="input-group">
@@ -361,6 +361,7 @@ document.getElementById("clearButton").addEventListener("click", () => {
     <div class="basal-segment">
       <div class="segment-header">
         <strong>Segment 1</strong>
+        <button type="button" class="remove-interval remove-segment" aria-label="Remove segment 1">×</button>
       </div>
       <div class="input-row">
         <div class="input-group">

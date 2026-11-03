@@ -961,3 +961,46 @@ body.dark-mode .ketamine-link-container .ketamine-link-button:hover {
 .summary-card .summary-group:last-child > .results-grid {
   margin-top: 12px !important;
 }
+
+
+.remove-segment:hover {
+  text-decoration: none;
+}
+
+/* Match interval headers to row labels */
+#intervalHeaders th.interval-header {
+  background: #e3efff;
+  color: #344054;
+}
+
+/* Match row-label and interval-header typography */
+#intervalTable th.row-label,
+#intervalHeaders th.interval-header {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+#intervalTable th.row-label,
+#intervalHeaders th.interval-header {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Match basal segment labels to interval labels */
+#basalSegments .segment-header strong,
+#basalSegments .input-group label {
+  color: #344054 !important;
+}
+
+/* Match basal labels to interval labels in both themes */
+body.dark-mode #basalSegments .input-group label,
+body.dark-mode #basalSegments .segment-header strong {
+  color: #344054 !important;
+}
+
+/* Match basal label typography to interval and row labels */
+#basalSegments .segment-header strong,
+#basalSegments .input-group label {
+  font-size: 14px !important;
+  font-weight: 600 !important;
+}
