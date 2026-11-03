@@ -354,7 +354,7 @@ document.getElementById("clearButton").addEventListener("click", () => {
   });
 
   nextIntervalId = 1;
-  addInterval();
+  for (let i = 0; i < 3; i++) addInterval();
 
   const basalContainer = document.getElementById("basalSegments");
   basalContainer.innerHTML = `
