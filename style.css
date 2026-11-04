@@ -43,7 +43,7 @@ h1 {
 
 h2 {
   margin: 0 0 20px;
-  font-size: 19px;
+  font-size: 20px;
 }
 
 .input-group {
@@ -283,9 +283,6 @@ input:focus {
   padding: 4px 0;
 }
 
-.remove-segment:hover {
-  text-decoration: underline;
-}
 
 .segment-dose {
   display: flex;
@@ -430,14 +427,7 @@ input:focus {
   background: #e3f5e9;
 }
 
-#intervalTable input[type="date"],
-#intervalTable input[data-field="time"] {
-  color: #667085;
-}
 
-#intervalTable input {
-  color: #17202a;
-}
 
 #intervalTable input,
 #intervalTable input[type="date"],
@@ -447,9 +437,9 @@ input:focus {
 #intervalTable input::-webkit-datetime-edit-month-field,
 #intervalTable input::-webkit-datetime-edit-day-field,
 #intervalTable input::-webkit-datetime-edit-year-field {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-  opacity: 1 !important;
+  color: #000000;
+  -webkit-text-fill-color: #000000;
+  opacity: 1;
 }
 
 /* Restore standard input and placeholder colors */
@@ -462,11 +452,6 @@ input:focus {
   color: #98a2b3 !important;
   -webkit-text-fill-color: #98a2b3 !important;
   opacity: 1;
-}
-
-#intervalTable input.invalid-time {
-  border-color: #dc2626;
-  background: #fef2f2;
 }
 
 #intervalTable input.invalid-time {
@@ -487,7 +472,7 @@ input:focus {
 .summary-group h3 {
   margin: 18px 0 10px;
   color: #344054;
-  font-size: 15px;
+  font-size: 16px;
 }
 
 .summary-group:first-of-type h3 {
@@ -498,32 +483,6 @@ input:focus {
   margin-top: 24px;
   padding-top: 18px;
   border-top: 1px solid #c8e6d3;
-}
-
-/* Typography refinements */
-h2 {
-  font-size: 20px;
-}
-
-.summary-group h3 {
-  font-size: 16px;
-}
-
-
-/* Align basal and bolus dose results side by side */
-.summary-card .summary-group:last-child {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 12px;
-}
-
-.summary-card .summary-group:last-child h3,
-.summary-card .summary-group:last-child > .result:first-of-type {
-  grid-column: 1 / -1;
-}
-
-.summary-card .summary-group:last-child > .results-grid {
-  display: contents;
 }
 
 /* Cohesive blue palette: PCA Intervals */
@@ -546,12 +505,12 @@ h2 {
 
 #intervalTable input {
   background: #f8fbff;
-  border-color: #c7d9ef;
+  border-color: #a9c5e5;
 }
 
 #addIntervalButton {
   background: #e6f1ff;
-  border-color: #b5d0f2;
+  border-color: #a9c5e5;
   color: #315d91;
 }
 
@@ -609,60 +568,25 @@ h2 {
   font-weight: 600;
 }
 
-/* Link to ketamine infusion calculator */
-.ketamine-link-container {
-  margin: 16px 0 22px;
-}
+/* Ketamine calculator navigation button */
 
 .ketamine-link-button {
   display: inline-block;
   padding: 11px 18px;
-  border: 1px solid #b5d0f2;
+  border: 1px solid #f0d49a;
   border-radius: 8px;
-  background: #e6f1ff;
-  color: #315d91;
+  background: #fff6e5;
+  color: #94651b;
   font-size: 14px;
   font-weight: 600;
   text-decoration: none;
 }
 
 .ketamine-link-button:hover {
-  background: #d7e9ff;
-}
-
-/* Neutral secondary navigation button */
-.ketamine-link-button {
-  background: #f1f3f5;
-  border-color: #d0d5dd;
-  color: #344054;
-}
-
-.ketamine-link-button:hover {
-  background: #e4e7ec;
-}
-
-/* Fourth color: amber navigation button */
-.ketamine-link-button {
-  background: #fff6e5;
-  border-color: #f0d49a;
-  color: #94651b;
-}
-.ketamine-link-button:hover {
   background: #ffedc7;
 }
 
-/* PCA DARK MODE */
-#themeToggle {
-  display: block;
-  margin: 12px 0 16px auto;
-  padding: 9px 14px;
-  border: 1px solid #cbd5e1;
-  border-radius: 10px;
-  background: #f8fafc;
-  color: #334155;
-  font-weight: 600;
-  cursor: pointer;
-}
+/* COHESIVE DARK MODE */
 
 html.dark-mode body {
   background: #111827;
@@ -671,225 +595,252 @@ html.dark-mode body {
 
 html.dark-mode body section,
 html.dark-mode body .card {
-  background: #1f2937;
+  background: #1c2432;
   color: #e5e7eb;
-  border-color: #374151;
+  border-color: #354154;
 }
 
+/* Shared inputs */
 html.dark-mode body input,
 html.dark-mode body select,
 html.dark-mode body textarea {
-  background: #111827;
-  color: #f9fafb;
-  border-color: #64748b;
+  background: #263244;
+  color: #f3f4f6;
+  border-color: #52627a;
 }
 
-html.dark-mode body #themeToggle {
-  background: #374151;
-  color: #f9fafb;
-  border-color: #64748b;
-}
-
-html.dark-mode body .project-footer,
-html.dark-mode body .project-footer p {
-  color: #9ca3af;
-}
-
-/* Dark mode: keep Basal Segments input text black */
-html.dark-mode body #basalSegments input,
-html.dark-mode body #basalSegments textarea {
-  color: #000000 !important;
-  -webkit-text-fill-color: #000000 !important;
-  background: #ffffff;
-}
-
-/* Keep Basal Segments placeholder text gray */
-html.dark-mode body #basalSegments input::placeholder,
-html.dark-mode body #basalSegments textarea::placeholder {
-  color: #9ca3af !important;
-  -webkit-text-fill-color: #9ca3af !important;
+html.dark-mode body input::placeholder,
+html.dark-mode body textarea::placeholder {
+  color: #a3afc2;
+  -webkit-text-fill-color: #a3afc2;
   opacity: 1;
 }
 
-
-/* Dark mode: improve Basal Segments label contrast */
-html.dark-mode body #basalSegments label {
-  color: #f3eaff !important;
+/* Dark-mode subtitle and section descriptions */
+html.dark-mode body .subtitle {
+  color: #a3afc2;
 }
 
-/* Dark mode: match light-mode label color */
-html.dark-mode body #basalSegments label {
-  color: #1f2937 !important;
+html.dark-mode body .section-description {
+  color: #b0bdcf;
 }
 
-/* Dark mode: preserve light-mode calculated result text colors */
-html.dark-mode body #results .result span {
-  color: #475467 !important;
+/* Preserve section colors in dark mode */
+html.dark-mode body .interval-card {
+  background: #192b40;
 }
 
-html.dark-mode body #results .result strong {
-  color: #1f2937 !important;
+html.dark-mode body .basal-card {
+  background: #2b2239;
 }
 
-html.dark-mode body #results .result small {
-  color: #667085 !important;
+/* Section-specific heading colors */
+html.dark-mode body .interval-card h2 {
+  color: #dbeafe;
 }
 
-/* Dark mode: preserve light-mode calculated text colors in Results */
-html.dark-mode body .summary-card .result span {
-  color: #475467 !important;
+html.dark-mode body .basal-card h2 {
+  color: #e9ddfa;
 }
 
-html.dark-mode body .summary-card .result strong {
-  color: #1f2937 !important;
+/* Pump Intervals — deep blue */
+html.dark-mode body #intervalTable {
+  background: #172b46;
+  border-color: #2c4561;
 }
 
-html.dark-mode body .summary-card .result small {
-  color: #667085 !important;
+html.dark-mode body #intervalTable th {
+  background: #203b5c;
+  color: #dbeafe;
+  border-color: #2c4561;
 }
 
+html.dark-mode body #intervalTable th.row-label,
+html.dark-mode body #intervalHeaders th.interval-header {
+  background: #29496c;
+  color: #dbeafe;
+}
 
+html.dark-mode body #intervalTable td {
+  background: #1b3452;
+  border-color: #2c4561;
+}
 
+html.dark-mode body #intervalTable input {
+  background: #29415f;
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  border-color: #527398;
+}
 
-/* Dark mode: lighten Results subsection headings */
+html.dark-mode body #intervalTable input::placeholder {
+  color: #b5c5d9 !important;
+  -webkit-text-fill-color: #b5c5d9 !important;
+}
+
+html.dark-mode body #addIntervalButton {
+  background: #29415f;
+  border-color: #527398;
+  color: #dbeafe;
+}
+
+/* Basal Segments — deep plum */
+html.dark-mode body #basalSegments > div {
+  background: #302344;
+  border-color: #594574;
+}
+
+html.dark-mode body #basalSegments input,
+html.dark-mode body #basalSegments textarea {
+  background: #44345c;
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  border-color: #765f96;
+}
+
+html.dark-mode body #basalSegments input::placeholder {
+  color: #c7b8dc !important;
+  -webkit-text-fill-color: #c7b8dc !important;
+}
+
+html.dark-mode body #basalSegments label,
+html.dark-mode body #basalSegments .segment-header strong {
+  color: #e9ddfa !important;
+}
+
+html.dark-mode body #basalSegments .unit-input span {
+  background: #392b50;
+  border-color: #765f96;
+  color: #e9ddfa;
+}
+
+html.dark-mode body #addBasalButton {
+  background: #44345c;
+  border-color: #765f96;
+  color: #eadcfb;
+}
+
+/* Results — deep forest green */
+html.dark-mode body .summary-card {
+  background: #1d332c;
+  border-color: #385747;
+}
+
+html.dark-mode body .summary-card .result {
+  background: #294438;
+  border-color: #486957;
+}
+
+html.dark-mode body .summary-card h2,
 html.dark-mode body .summary-card .summary-group h3 {
-  color: #667085 !important;
+  color: #b8e2c9;
 }
 
-/* Align theme toggle and Ketamine calculator button horizontally */
+html.dark-mode body .summary-card .summary-group + .summary-group {
+  border-color: #385747;
+}
+
+html.dark-mode body #results .result span,
+html.dark-mode body .summary-card .result span {
+  color: #c4d8cc !important;
+}
+
+html.dark-mode body #results .result strong,
+html.dark-mode body .summary-card .result strong {
+  color: #f0fff5 !important;
+}
+
+html.dark-mode body #results .result small,
+html.dark-mode body .summary-card .result small {
+  color: #b3cbbd !important;
+}
+
+/* Dark mode readability refinements */
+
+/* Pump Interval date and time values */
+html.dark-mode body #intervalTable input[type="date"],
+html.dark-mode body #intervalTable input[data-field="time"] {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  color-scheme: dark;
+}
+
+/* Theme toggle and footer */
+
+/* Shared navigation layout */
 .ketamine-link-container {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-}
-
-.ketamine-link-container #themeToggle {
-  display: inline-flex;
-  align-items: center;
-  margin: 0;
-  white-space: nowrap;
-}
-
-/* Left-align the two navigation controls */
-.ketamine-link-container {
   justify-content: flex-start;
+  gap: 12px;
+  margin: 16px 0 22px;
 }
 
-/* Match navigation button dimensions */
+/* Shared navigation button styling */
 .ketamine-link-container #themeToggle,
-.ketamine-link-container .ketamine-link-button {
-  height: 56px;
-  min-height: 56px;
+.ketamine-link-container .ketamine-link-button,
+.ketamine-link-container .paging-link-button {
+  height: 42px;
+  min-height: 42px;
   box-sizing: border-box;
+  padding: 8px 14px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin: 0;
-}
-
-/* Smaller, matching navigation buttons */
-.ketamine-link-container #themeToggle,
-.ketamine-link-container .ketamine-link-button {
-  height: 42px;
-  min-height: 42px;
-  padding: 8px 14px;
-  font-size: 14px;
-  box-sizing: border-box;
-}
-
-/* Paging System navigation button */
-.paging-link-button {
-  height: 42px;
-  min-height: 42px;
-  padding: 8px 14px;
-  box-sizing: border-box;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #c6dcf7;
+  border: 1px solid #cbd5e1;
   border-radius: 9px;
-  background: #edf5ff;
-  color: #315b8a;
+  background: #f8fafc;
+  color: #334155;
+  font-family: inherit;
   font-size: 14px;
   font-weight: 600;
+  line-height: 20px;
   text-decoration: none;
   white-space: nowrap;
 }
 
-.paging-link-button:hover {
-  background: #dceaff;
+/* Remove native browser button styling */
+.ketamine-link-container #themeToggle {
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
+  outline-offset: 2px;
 }
 
-/* Match Paging System button to Dark/Light Mode button */
-.paging-link-button {
-  background: #f8fafc;
-  border-color: #cbd5e1;
-  color: #334155;
-}
-
-.paging-link-button:hover {
+/* Navigation hover states */
+.ketamine-link-container #themeToggle:hover,
+.ketamine-link-container .ketamine-link-button:hover,
+.ketamine-link-container .paging-link-button:hover {
   background: #e2e8f0;
 }
 
-/* Keep navigation controls identical in light and dark mode */
-.ketamine-link-container #themeToggle,
-.ketamine-link-container .ketamine-link-button,
-.ketamine-link-container .paging-link-button {
-  height: 42px !important;
-  min-height: 42px !important;
-  box-sizing: border-box !important;
-  padding: 8px 14px !important;
-  font-size: 14px !important;
-  line-height: 20px !important;
-  border-width: 1px !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  vertical-align: middle;
-  white-space: nowrap;
+/* Navigation buttons in dark mode */
+html.dark-mode body .ketamine-link-container #themeToggle,
+html.dark-mode body .ketamine-link-container .ketamine-link-button,
+html.dark-mode body .ketamine-link-container .paging-link-button {
+  background: #374151;
+  border-color: #64748b;
+  color: #f9fafb;
 }
 
-/* Match Paging System button to theme toggle in both modes */
-.paging-link-button {
-  background: #f8fafc !important;
-  border-color: #cbd5e1 !important;
-  color: #334155 !important;
+html.dark-mode body .ketamine-link-container #themeToggle:hover,
+html.dark-mode body .ketamine-link-container .ketamine-link-button:hover,
+html.dark-mode body .ketamine-link-container .paging-link-button:hover {
+  background: #475569;
 }
 
-.paging-link-button:hover {
-  background: #e2e8f0 !important;
+/* Navigation emoji sizing */
+.ketamine-link-container .nav-emoji {
+  font-size: 16px;
+  line-height: 20px;
+  margin-right: 5px;
 }
 
-html.dark-mode body .paging-link-button {
-  background: #374151 !important;
-  border-color: #64748b !important;
-  color: #f9fafb !important;
-}
-
-html.dark-mode body .paging-link-button:hover {
-  background: #475569 !important;
-}
-
-/* Unify all navigation button colors */
-.ketamine-link-container .ketamine-link-button {
-  background: #f8fafc !important;
-  border-color: #cbd5e1 !important;
-  color: #334155 !important;
-}
-
-.ketamine-link-container .ketamine-link-button:hover {
-  background: #e2e8f0 !important;
-}
-
-html.dark-mode body .ketamine-link-container .ketamine-link-button {
-  background: #374151 !important;
-  border-color: #64748b !important;
-  color: #f9fafb !important;
-}
-
-html.dark-mode body .ketamine-link-container .ketamine-link-button:hover {
-  background: #475569 !important;
+/* Dark mode footer */
+html.dark-mode body .project-footer,
+html.dark-mode body .project-footer p {
+  color: #9ca3af;
 }
 
 /* Keep basal and bolus result boxes equal in size */
@@ -909,14 +860,8 @@ html.dark-mode body .ketamine-link-container .ketamine-link-button:hover {
   box-sizing: border-box;
 }
 
-@media (max-width: 600px) {
-  .summary-card .summary-group:last-child > .result:nth-of-type(2),
-  .summary-card .summary-group:last-child > .results-grid > .result:first-child {
-    margin-top: 12px;
-  }
-}
+/* Dose Distribution: four equal compact boxes */
 
-/* Compact, equal-sized Dose Distribution boxes */
 .summary-card .summary-group:last-child {
   display: block;
 }
@@ -929,43 +874,21 @@ html.dark-mode body .ketamine-link-container .ketamine-link-button:hover {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 12px;
+  margin-top: 12px;
 }
 
 .summary-card .summary-group:last-child > .results-grid > .result {
   width: 100%;
   min-width: 0;
-  min-height: 110px;
-  height: 110px;
-  margin-top: 12px;
+  height: 100px;
+  min-height: 100px;
+  margin: 0;
+  padding: 12px;
   box-sizing: border-box;
-}
-
-/* Final Dose Distribution layout: four equal compact boxes */
-.summary-card .summary-group:last-child > .results-grid {
-  display: grid !important;
-  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  gap: 12px !important;
-}
-
-.summary-card .summary-group:last-child > .results-grid > .result {
-  width: 100% !important;
-  height: 100px !important;
-  min-height: 100px !important;
-  margin: 0 !important;
-  padding: 12px !important;
-  box-sizing: border-box !important;
   align-content: center;
 }
 
-@media (max-width: 600px) {
-  .summary-card .summary-group:last-child > .results-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-}
 
-.summary-card .summary-group:last-child > .results-grid {
-  margin-top: 12px !important;
-}
 
 
 .remove-segment:hover {
@@ -976,13 +899,6 @@ html.dark-mode body .ketamine-link-container .ketamine-link-button:hover {
 #intervalHeaders th.interval-header {
   background: #e3efff;
   color: #344054;
-}
-
-/* Match row-label and interval-header typography */
-#intervalTable th.row-label,
-#intervalHeaders th.interval-header {
-  font-size: 15px;
-  font-weight: 600;
 }
 
 #intervalTable th.row-label,
@@ -997,15 +913,114 @@ html.dark-mode body .ketamine-link-container .ketamine-link-button:hover {
   color: #344054 !important;
 }
 
-/* Match basal labels to interval labels in both themes */
-html.dark-mode body #basalSegments .input-group label,
-html.dark-mode body #basalSegments .segment-header strong {
-  color: #344054 !important;
-}
 
 /* Match basal label typography to interval and row labels */
 #basalSegments .segment-header strong,
 #basalSegments .input-group label {
   font-size: 14px !important;
   font-weight: 600 !important;
+}
+
+
+/* Final dark-mode text color corrections */
+html.dark-mode body #basalSegments .input-group label,
+html.dark-mode body #basalSegments .segment-header strong {
+  color: #e9ddfa !important;
+}
+
+html.dark-mode body #intervalTable input[type="date"],
+html.dark-mode body #intervalTable input[type="date"]::-webkit-datetime-edit,
+html.dark-mode body #intervalTable input[type="date"]::-webkit-datetime-edit-fields-wrapper,
+html.dark-mode body #intervalTable input[type="date"]::-webkit-datetime-edit-text,
+html.dark-mode body #intervalTable input[type="date"]::-webkit-datetime-edit-month-field,
+html.dark-mode body #intervalTable input[type="date"]::-webkit-datetime-edit-day-field,
+html.dark-mode body #intervalTable input[type="date"]::-webkit-datetime-edit-year-field,
+html.dark-mode body #intervalTable input[data-field="time"] {
+  color: #f1f5f9 !important;
+  -webkit-text-fill-color: #f1f5f9 !important;
+  color-scheme: dark;
+}
+
+/* Dark mode Clear button */
+html.dark-mode body #clearButton {
+  background: #374151;
+  border-color: #64748b;
+  color: #f9fafb;
+}
+
+html.dark-mode body #clearButton:hover {
+  background: #475569;
+}
+
+/* Light mode: neutral outer borders for input sections */
+html:not(.dark-mode) body .interval-card,
+html:not(.dark-mode) body .basal-card {
+  border-color: #e1e5ea;
+}
+
+/* Light mode: consistent section-specific typography */
+
+/* PCA Intervals — blue */
+html:not(.dark-mode) body .interval-card h2,
+html:not(.dark-mode) body #intervalTable th,
+html:not(.dark-mode) body #intervalHeaders th.interval-header {
+  color: #315d91;
+}
+
+/* Basal Segments — purple */
+html:not(.dark-mode) body .basal-card h2,
+html:not(.dark-mode) body #basalSegments label,
+html:not(.dark-mode) body #basalSegments .segment-header strong {
+  color: #5b3d91 !important;
+}
+
+/* Shared input typography */
+html:not(.dark-mode) body #intervalTable input,
+html:not(.dark-mode) body #basalSegments input,
+html:not(.dark-mode) body #basalSegments textarea {
+  color: #17202a;
+  -webkit-text-fill-color: #17202a;
+}
+
+html:not(.dark-mode) body #intervalTable input::placeholder,
+html:not(.dark-mode) body #basalSegments input::placeholder {
+  color: #98a2b3;
+  -webkit-text-fill-color: #98a2b3;
+  opacity: 1;
+}
+
+/* Results — green */
+html:not(.dark-mode) body .summary-card h2,
+html:not(.dark-mode) body .summary-card .summary-group h3 {
+  color: #276749;
+}
+
+html:not(.dark-mode) body .summary-card .result span {
+  color: #2f684d !important;
+}
+
+html:not(.dark-mode) body .summary-card .result strong {
+  color: #14532d !important;
+}
+
+html:not(.dark-mode) body .summary-card .result small {
+  color: #527461 !important;
+}
+
+/* Shared section descriptions */
+html:not(.dark-mode) body .section-description {
+  color: #667085;
+}
+html:not(.dark-mode) body #basalSegments .unit-input span { background: #f1e9ff; border-color: #cdb8ed; color: #5b3d91; }
+
+/* Light-mode basal unit suffix contrast */
+html:not(.dark-mode) body #basalSegments .unit-input span {
+  background: #e2d3f5;
+}
+
+/* Restore original gray basal unit suffixes in light mode */
+html:not(.dark-mode) body #basalSegments .unit-input span {
+  background: #f1f3f5;
+  border-color: #cbd2da;
+  color: #667085;
 }
