@@ -851,14 +851,6 @@ html.dark-mode body .project-footer p {
   box-sizing: border-box;
 }
 
-/* Align Total Basal and Total Bolus Dose boxes */
-.summary-card .summary-group:last-child > .result:nth-of-type(2),
-.summary-card .summary-group:last-child > .results-grid > .result:first-child {
-  margin-top: 18px;
-  align-self: stretch;
-  height: 100%;
-  box-sizing: border-box;
-}
 
 /* Dose Distribution: four equal compact boxes */
 
@@ -1023,4 +1015,9 @@ html:not(.dark-mode) body #basalSegments .unit-input span {
   background: #f1f3f5;
   border-color: #cbd2da;
   color: #667085;
+}
+
+/* Ensure consistent vertical spacing in Dose Distribution */
+.summary-card .summary-group:last-child > .results-grid {
+  row-gap: 12px !important;
 }
