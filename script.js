@@ -76,13 +76,8 @@ function updateCalculator() {
   document.getElementById("totalDemands").textContent = formatNumber(demands);
   document.getElementById("totalDelivered").textContent = formatNumber(delivered);
 
-  document.getElementById("deliveryFraction").textContent =
-    deliveryFraction === null
-      ? "—"
-      : `${formatNumber(delivered)} / ${formatNumber(demands)}`;
-
   document.getElementById("deliveryPercent").textContent =
-    deliveryFraction === null ? "" : `${(deliveryFraction * 100).toFixed(1)}%`;
+    deliveryFraction === null ? "—" : `${Math.round(deliveryFraction * 100)}%`;
 
   const basalSegments = getBasalData();
   let totalBasal = 0;
@@ -125,10 +120,10 @@ function updateCalculator() {
       : null;
 
   document.getElementById("basalPercent").textContent =
-    basalPercent === null ? "—" : `${basalPercent.toFixed(1)}%`;
+    basalPercent === null ? "—" : `${Math.round(basalPercent)}%`;
 
   document.getElementById("bolusPercent").textContent =
-    bolusPercent === null ? "—" : `${bolusPercent.toFixed(1)}%`;
+    bolusPercent === null ? "—" : `${Math.round(bolusPercent)}%`;
 }
 
 let nextIntervalId = 1;
@@ -294,18 +289,13 @@ function buildCopyText() {
       : null;
 
   return [
-    `Demands: ${formatNumber(demands)}`,
+    `Total demands: ${formatNumber(demands)}`,
     `Doses delivered: ${formatNumber(delivered)}`,
-    `Delivery: ${
-      deliveryFraction === null
-        ? "—"
-        : `${formatNumber(delivered)}/${formatNumber(demands)} (${(deliveryFraction * 100).toFixed(1)}%)`
-    }`,
-    `Total dose: ${formatNumber(totalDose)} mg`,
-    `Total basal: ${formatNumber(totalBasal)} mg`,
-    `Total bolus: ${formatNumber(bolusDose)} mg`,
-    `Basal: ${basalPercent === null ? "—" : basalPercent.toFixed(1) + "%"}`,
-    `Bolus: ${bolusPercent === null ? "—" : bolusPercent.toFixed(1) + "%"}`
+    `Delivery rate: ${deliveryFraction === null ? "—" : Math.round(deliveryFraction * 100) + "%"}`,
+    "",
+    `Total PCA dose: ${formatNumber(totalDose)} mg`,
+    `Total basal dose: ${formatNumber(totalBasal)} mg (${basalPercent === null ? "—" : Math.round(basalPercent) + "%"} of total PCA dose)`,
+    `Total bolus dose: ${formatNumber(bolusDose)} mg (${bolusPercent === null ? "—" : Math.round(bolusPercent) + "%"} of total PCA dose)`
   ].join("\n");
 }
 
