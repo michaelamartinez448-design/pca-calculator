@@ -1062,11 +1062,7 @@ html:not(.dark-mode) body #basalSegments .unit-input span {
   margin-top: 18px;
 }
 
-@media (max-width: 600px) {
-  .demand-counts-grid {
-    grid-template-columns: 1fr;
-  }
-}
+
 
 /* Normalize vertical spacing in Results */
 .demand-counts-grid {
